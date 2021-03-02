@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'dashboard'
+
 
 # Application definition
 
@@ -41,6 +43,15 @@ INSTALLED_APPS = [
     'CarZone2.apps.Carzone2Config',
     'ckeditor',
     'django.contrib.humanize',
+    'accounts.apps.AccountsConfig',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'contacts.apps.ContactsConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -138,4 +149,13 @@ MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='meshlrd14@gmail.com'
+EMAIL_HOST_PASSWORD='Happyzone23@'
+EMAIL_USE_TLS=True
 

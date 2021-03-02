@@ -1,10 +1,12 @@
+<div class="page_loader"></div>
+
 <!-- Top header start -->
-<header class="top-header th-2 top-header-bg">
+<header class="top-header bg-active" id="top-header-2">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-7">
                 <div class="list-inline">
-                    <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i>+234-813-077-2189</a>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=+2348130772189"><i class="fa fa-whatsapp"></i>WhatsApp</a>
                     <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>meshlrd14@gmail.com</a>
                     <a href="tel:info@themevessel.com"><i class="fa fa-clock-o"></i>{% now "D d M Y" %}</a>
                 </div>
@@ -13,7 +15,7 @@
                 <ul class="top-social-media pull-right">
                     {% if user.is_authenticated %}
                         <li>
-                            <a href="{% url 'dashboard' %}" class="sign-in"><i class="fa fa-tachometer"></i> Dashboard</a>
+                        <a href="{% url 'dashboard' %}" class="sign-in"><i class="fa fa-tachometer"></i> Dashboard</a>
                         </li>
                         <a href="javascript:{document.getElementById('logout').submit()}" class="sign-in"><i class="fa fa-sign-out"></i> Logout</a>
                         <form action="{% url 'logout' %}" method="post" id="logout">
